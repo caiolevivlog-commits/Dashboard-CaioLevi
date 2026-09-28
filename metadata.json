@@ -1,0 +1,6 @@
+{
+  "name": "Dashboard de Vendas & Faturamento",
+  "description": "Painel gerencial de performance de vendas com faturamento por período, ranking de vendedores, comparativo de produtos, evolução temporal, distribuição de pagamentos e importador de planilhas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

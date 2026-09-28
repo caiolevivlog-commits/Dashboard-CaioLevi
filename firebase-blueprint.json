@@ -1,0 +1,55 @@
+{
+  "entities": {
+    "SaleRecord": {
+      "title": "SaleRecord",
+      "description": "Registro de venda de calçados contendo vendedor, produto, quantidade, preço unitário e faturamento calculado",
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "string",
+          "description": "Data da venda no formato YYYY-MM-DD",
+          "maxLength": 30
+        },
+        "vendedor": {
+          "type": "string",
+          "description": "Nome da vendedora ou vendedor responsável",
+          "maxLength": 100
+        },
+        "produto": {
+          "type": "string",
+          "description": "Nome ou categoria do calçado comercializado",
+          "maxLength": 100
+        },
+        "quantidade": {
+          "type": "number",
+          "description": "Quantidade de unidades/pares vendidos"
+        },
+        "preco": {
+          "type": "number",
+          "description": "Preço unitário em Reais (BRL)"
+        },
+        "faturamento": {
+          "type": "number",
+          "description": "Faturamento bruto calculado (Quantidade × Preço)"
+        },
+        "formaPagamento": {
+          "type": "string",
+          "description": "Método de pagamento utilizado",
+          "maxLength": 60
+        },
+        "regiao": {
+          "type": "string",
+          "description": "Região ou filial da venda",
+          "maxLength": 60
+        }
+      },
+      "required": ["data", "vendedor", "produto", "quantidade", "preco", "faturamento", "formaPagamento"]
+    }
+  },
+  "firestore": {
+    "/sales/{saleId}": {
+      "schema": "SaleRecord",
+      "description": "Coleção com os lançamentos de vendas do dashboard executivo"
+    }
+  }
+}
